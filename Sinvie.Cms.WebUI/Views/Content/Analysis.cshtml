@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Analysis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@using System.Text.RegularExpressions;
+
+<h1>Analysis</h1>
+
+@{ 
+    string strContent = "我今天下午2点送汽车到香槟花园去";
+    string strContent2 = "我今天下午18点回香槟花园去";
+    string regexDate = "今天|明天|后天|昨天|前天";
+    string regexTime = "上午|下午|早上|凌晨|晚上|傍晚|深夜";
+    string regexHour = "(\\d+)点|\\d+点(\\d+)分|(\\d+)点半";
+    string regex4 = "(?<=([回|到|去]))[.\\s\\S]*";
+    string regex5 = "上午|下午|早上|凌晨|晚上|傍晚|深夜";
+    string regexGoods = "(?<=([带|送|寄|邮]))[.\\s\\S]*?(?=([回|到|去]))";
+    var str111 = "(?<=([回|到|去]))[.\\s\\S]*?([?=(去)|\\s])";
+    var  s1= Regex.Match(strContent, regexDate, RegexOptions.IgnoreCase);
+    var  s2= Regex.Match(strContent, regexTime, RegexOptions.IgnoreCase);
+    var  s3= Regex.Match(strContent, regexHour, RegexOptions.IgnoreCase);
+    var  s4= Regex.Match(strContent, regex4, RegexOptions.IgnoreCase);
+    var  s6= Regex.Match(strContent, regexGoods, RegexOptions.IgnoreCase);
+    var  rg=new Regex("(?<=([回|到|去]))[.\\s\\S]*?(?=(去))", RegexOptions.Multiline | RegexOptions.Singleline);
+    var s5 =  rg.Match(strContent);
+}
+<div>
+    <h2>@strContent</h2>
+    <hr />
+    <p>日期：@s1.Value</p>
+    <hr />
+    <p>时间：@s2.Value</p>
+    <hr />
+    <p>时间点：@s3.Value</p>
+    <hr />
+    <p>物品：@s6.Value</p>
+    <hr />
+    <p>目的地1：@s4.Value</p>
+    <hr />
+    <p>目的地2：@s5.Value</p>
+</div>
