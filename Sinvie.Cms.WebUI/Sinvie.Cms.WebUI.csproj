@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Humanizer.Core" Version="2.7.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sinvie.Cms.Models\Sinvie.Cms.Models.csproj" />
+    <ProjectReference Include="..\Sinvie.Cms.ViewModels\Sinvie.Cms.ViewModels.csproj" />
+  </ItemGroup>
+
+
+
+</Project>
