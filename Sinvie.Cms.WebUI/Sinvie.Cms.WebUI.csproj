@@ -14,6 +14,15 @@
     <ProjectReference Include="..\Sinvie.Cms.ViewModels\Sinvie.Cms.ViewModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\css\g.css" />
+    <None Include="wwwroot\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\template\" />
+  </ItemGroup>
+
 
 
 </Project>
